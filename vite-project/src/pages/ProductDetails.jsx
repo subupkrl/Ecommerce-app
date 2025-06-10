@@ -39,7 +39,7 @@ const ProductDetails = () => {
           </div>
           <div className="col-md-7">
             <h2>{product.product_name}</h2>
-            <h1>${product.product_price}</h1>
+            <h1>Rs {product.product_price}</h1>
             <p>
               <strong>
                 Category:{product.category && product.category.category_name}

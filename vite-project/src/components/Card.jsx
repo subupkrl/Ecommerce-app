@@ -15,7 +15,7 @@ const Card = (props) => {
           />
           <div className="card-body">
             <h5 className="card-title">{product_name}</h5>
-            <h5>${product_price}</h5>
+            <h5>Rs {product_price}</h5>
             <Link to={`/productdetails/${_id}`} className="btn btn-success">
               View Details
             </Link>

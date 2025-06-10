@@ -37,6 +37,15 @@ const Header = () => {
               <li>
                 <NavLink
                   activeclassname="active"
+                  to="/cart"
+                  className="nav-link px-2 text-white"
+                >
+                  Cart
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeclassname="active"
                   to="/faq"
                   className="nav-link px-2 text-white"
                 >

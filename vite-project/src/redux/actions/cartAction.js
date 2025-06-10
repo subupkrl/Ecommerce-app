@@ -9,7 +9,7 @@ export const addItemToCart = id=> async(dispatch,getState)=>{
             id:data._id,
             title:data.product_name,price: data.product_price,
             stock:data.countInStock,
-            image: data.product_image,category: data.category,category_name,
+            image: data.product_image,category: data.category.category_name,
             quantity: 1,
         }
     })
