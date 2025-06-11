@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { isAuthenticated, signout } from "../auth";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <header className="p-3 text-bg-dark">
@@ -76,12 +79,32 @@ const Header = () => {
             </form>
 
             <div className="text-end">
-              <NavLink to="/signin" className="btn btn-outline-light me-2">
-                Login
-              </NavLink>
-              <NavLink to="/register" className="btn btn-warning">
-                Sign-up
-              </NavLink>
+              {isAuthenticated() && (
+                <>
+                  <NavLink to="/signin" className="btn btn-outline-light me-2">
+                    Login
+                  </NavLink>
+                  <NavLink to="/register" className="btn btn-warning">
+                    Sign-up
+                  </NavLink>
+                </>
+              )}
+              {isAuthenticated() && (
+                <>
+                  <li className="list-unstyled">
+                    <button
+                      className="btn btn-danger"
+                      onClick={() =>
+                        signout(() => {
+                          navigate("/signin");
+                        })
+                      }
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </>
+              )}
             </div>
           </div>
         </div>

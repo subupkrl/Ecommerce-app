@@ -13,6 +13,7 @@ const Login = () => {
     redirectTo: false,
   });
   const { email, password, error, redirectTo } = values;
+
   // handling or reading the input value
   const handleChange = (name) => (event) => {
     setValues({ ...values, [name]: event.target.value });
@@ -20,7 +21,7 @@ const Login = () => {
   // handling the form
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValues({ ...values });
+    // setValues({ ...values });
     // call the signin function
     signin({ email, password }).then((data) => {
       if (data.error) {
@@ -80,11 +81,11 @@ const Login = () => {
               <button className="btn btn-primary" onClick={handleSubmit}>
                 Signin
               </button>
-              <div className="d-flex justify-content between mt-2">
+              <div className="d-flex justify-content between mt-2 space-2">
                 <Link to="/forgetpassword" className="text-decoration-none">
                   Forget Password
                 </Link>
-                <Link to="/" className="text-decoration-none">
+                <Link to="/register" className="text-decoration-none">
                   Create an account instead
                 </Link>
               </div>

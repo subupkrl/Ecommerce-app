@@ -23,7 +23,7 @@ const ResetPassword = () => {
     //forget password  function call
     const token = params.token;
     //reset password function
-    fetch(`${APP_URL}/rest/password/${token}`, {
+    fetch(`${APP_URL}/reset/password/${token}`, {
       method: "PUT",
       headers: {
         accept: "application/json",

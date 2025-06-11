@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
+
 import Layouts from "./components/Layouts";
 import ProductDetails from "./pages/ProductDetails";
 import Product from "./pages/Product";
@@ -17,7 +18,7 @@ import UserRoute from "./auth/UserRoute";
 const MyRoute = () => {
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Layouts />}>
             <Route index element={<HomePage />} />
@@ -32,14 +33,15 @@ const MyRoute = () => {
             <Route path="signin" element={<Login />} />
             <Route path="forgetpassword" element={<ForgetPassword />} />
             <Route path="reset/password/:token" element={<ResetPassword />} />
-            <Route path="profile" element={<Profile />} />
           </Route>
+
           <Route path="/*" element={<NotFound />} />
+
           <Route path="/profile" element={<UserRoute />}>
             <Route index element={<Profile />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 };

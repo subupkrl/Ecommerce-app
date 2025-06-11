@@ -51,7 +51,7 @@ export const isAuthenticated=()=>{
 
 //forget password
 export const forgetPassword = user=>{
-    return fetch (`${APP_URL}/forget/password`,{
+    return fetch (`${APP_URL}/forgot/password`,{
         method:"POST",
         headers:{
             accept:"application/json",
@@ -63,4 +63,19 @@ export const forgetPassword = user=>{
         return res.json()
     })
     .catch(err=> console.log(err))
+}
+
+//signout 
+export const signout = (next)=>{
+    if(typeof window !== "undefined"){
+        localStorage.removeItem("jwt")
+        next()
+        return fetch (`${APP_URL}/signout`,{
+            method:"POST"
+        })
+        .then(res=>{
+            return res.json()
+        })
+        .catch(err=>console.log(err))
+    }
 }

@@ -9,15 +9,17 @@ const Register = () => {
     error: "",
     success: false,
   });
+
   // object destructure
   const { error, success } = values;
 
   // show error message
   const showError = () =>
     error && <div className="alert alert-danger">{error}</div>;
+
   // show success message
   const showSuccess = () =>
-    success && <div className="alert alert-success">new account created</div>;
+    success && <div className="alert alert-success">New account created</div>;
   return (
     <>
       <Helmet>

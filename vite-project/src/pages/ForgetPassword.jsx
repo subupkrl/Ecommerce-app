@@ -44,7 +44,7 @@ const ForgetPassword = () => {
         <div className="col-5 my-4">
           {showError()}
           {showSuccess()}
-          <form action="" className="p-3 shadow">
+          <form className="p-3 shadow">
             <h2 className="my-2 text-center">Forget Password</h2>
             <div className="mb-3">
               <label htmlFor="email">Email</label>
