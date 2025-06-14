@@ -14,6 +14,12 @@ import ForgetPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Profile from "./auth/Profile";
 import UserRoute from "./auth/UserRoute";
+import AdminRoute from "./auth/AdminRoute";
+import Dashboard from "./admin/Dashboard";
+import AddCategory from "./admin/AddCategory";
+import AddProduct from "./admin/AddProduct";
+import AllProduct from "./admin/AllProduct";
+import UpdateProduct from "./admin/UpdateProduct";
 
 const MyRoute = () => {
   return (
@@ -39,6 +45,17 @@ const MyRoute = () => {
 
           <Route path="/profile" element={<UserRoute />}>
             <Route index element={<Profile />} />
+          </Route>
+
+          <Route path="/admin/" element={<AdminRoute />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="add-category" element={<AddCategory />} />
+            <Route path="add-product" element={<AddProduct />} />
+            <Route path="all-product" element={<AllProduct />} />
+            <Route
+              path="update-product/:productId"
+              element={<UpdateProduct />}
+            />
           </Route>
         </Routes>
       </Router>
