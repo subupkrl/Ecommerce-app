@@ -4,8 +4,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaTrash } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { IMG_URL } from "../config";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -131,7 +133,12 @@ const Cart = () => {
                     )}
                   </p>
                   <hr />
-                  <button className="btn btn-warning">Check Out</button>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => navigate("/shipping")}
+                  >
+                    Check Out
+                  </button>
                 </div>
               </div>
             </>

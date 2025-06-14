@@ -20,6 +20,8 @@ import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
 import AllProduct from "./admin/AllProduct";
 import UpdateProduct from "./admin/UpdateProduct";
+import Shipping from "./pages/Shipping";
+import ConfirmOrder from "./pages/ConfirmOrder";
 
 const MyRoute = () => {
   return (
@@ -39,12 +41,15 @@ const MyRoute = () => {
             <Route path="signin" element={<Login />} />
             <Route path="forgetpassword" element={<ForgetPassword />} />
             <Route path="reset/password/:token" element={<ResetPassword />} />
+            <Route path="shipping" element={<Shipping />} />
+            <Route path="/confirm" element={<ConfirmOrder />} />
           </Route>
 
           <Route path="/*" element={<NotFound />} />
 
-          <Route path="/profile" element={<UserRoute />}>
-            <Route index element={<Profile />} />
+          <Route path="/" element={<UserRoute />}>
+            <Route index path="/profile" element={<Profile />} />
+            <Route path="/confirm" element={<ConfirmOrder />} />
           </Route>
 
           <Route path="/admin/" element={<AdminRoute />}>
