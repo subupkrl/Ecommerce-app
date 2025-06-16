@@ -22,6 +22,10 @@ import AllProduct from "./admin/AllProduct";
 import UpdateProduct from "./admin/UpdateProduct";
 import Shipping from "./pages/Shipping";
 import ConfirmOrder from "./pages/ConfirmOrder";
+import EsewaPayment from "./pages/EsewaPayment";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailure from "./pages/PaymentFailure";
+import ThankYou from "./pages/ThankYou";
 
 const MyRoute = () => {
   return (
@@ -50,6 +54,10 @@ const MyRoute = () => {
           <Route path="/" element={<UserRoute />}>
             <Route index path="/profile" element={<Profile />} />
             <Route path="/confirm" element={<ConfirmOrder />} />
+            <Route path="esewa-payment" element={<EsewaPayment />} />
+            <Route to="/payment-success" element={<PaymentSuccess />} />
+            <Route to="/payment-failure" element={<PaymentFailure />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Route>
 
           <Route path="/admin/" element={<AdminRoute />}>
